@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		EA7E735D298594D500C662F8 /* MyNextWeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E735C298594D500C662F8 /* MyNextWeekApp.swift */; };
-		EA7E735F298594D500C662F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E735E298594D500C662F8 /* ContentView.swift */; };
+		EA7E735F298594D500C662F8 /* ActionTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E735E298594D500C662F8 /* ActionTypesView.swift */; };
 		EA7E7361298594D700C662F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7E7360298594D700C662F8 /* Assets.xcassets */; };
 		EA7E7364298594D700C662F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7E7363298594D700C662F8 /* Preview Assets.xcassets */; };
+		EAFA49E129859C8500115670 /* AddActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E029859C8500115670 /* AddActionView.swift */; };
+		EAFA49E329859F7200115670 /* ActionDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E229859F7200115670 /* ActionDimension.swift */; };
+		EAFA49E52985C71800115670 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E42985C71800115670 /* EventEditView.swift */; };
+		EAFA49E72985D08900115670 /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E62985D08900115670 /* DayButton.swift */; };
+		EAFA49E92985D3E300115670 /* AddActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E82985D3E300115670 /* AddActionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA7E7359298594D500C662F8 /* MyNextWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNextWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7E735C298594D500C662F8 /* MyNextWeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextWeekApp.swift; sourceTree = "<group>"; };
-		EA7E735E298594D500C662F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EA7E735E298594D500C662F8 /* ActionTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypesView.swift; sourceTree = "<group>"; };
 		EA7E7360298594D700C662F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA7E7363298594D700C662F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EAFA49E029859C8500115670 /* AddActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionView.swift; sourceTree = "<group>"; };
+		EAFA49E229859F7200115670 /* ActionDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDimension.swift; sourceTree = "<group>"; };
+		EAFA49E42985C71800115670 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		EAFA49E62985D08900115670 /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
+		EAFA49E82985D3E300115670 /* AddActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,12 @@
 			isa = PBXGroup;
 			children = (
 				EA7E735C298594D500C662F8 /* MyNextWeekApp.swift */,
-				EA7E735E298594D500C662F8 /* ContentView.swift */,
+				EA7E735E298594D500C662F8 /* ActionTypesView.swift */,
+				EAFA49E229859F7200115670 /* ActionDimension.swift */,
+				EAFA49E029859C8500115670 /* AddActionView.swift */,
+				EAFA49E82985D3E300115670 /* AddActionViewModel.swift */,
+				EAFA49E62985D08900115670 /* DayButton.swift */,
+				EAFA49E42985C71800115670 /* EventEditView.swift */,
 				EA7E7360298594D700C662F8 /* Assets.xcassets */,
 				EA7E7362298594D700C662F8 /* Preview Content */,
 			);
@@ -137,7 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA7E735F298594D500C662F8 /* ContentView.swift in Sources */,
+				EAFA49E329859F7200115670 /* ActionDimension.swift in Sources */,
+				EAFA49E92985D3E300115670 /* AddActionViewModel.swift in Sources */,
+				EAFA49E129859C8500115670 /* AddActionView.swift in Sources */,
+				EA7E735F298594D500C662F8 /* ActionTypesView.swift in Sources */,
+				EAFA49E52985C71800115670 /* EventEditView.swift in Sources */,
+				EAFA49E72985D08900115670 /* DayButton.swift in Sources */,
 				EA7E735D298594D500C662F8 /* MyNextWeekApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +290,7 @@
 				DEVELOPMENT_TEAM = 6BTW6RT2T4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +320,7 @@
 				DEVELOPMENT_TEAM = 6BTW6RT2T4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
