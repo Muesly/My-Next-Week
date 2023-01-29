@@ -29,11 +29,11 @@ struct AddActionView: View {
             VStack(alignment: .leading, spacing: 10) {
                 TextField("", text: $actionText)
                     .padding()
-                    .background(Color(red: 0.1, green: 0.1, blue: 0.1))
+                    .background(Color("backgroundSecondary"))
                     .focused($focusedField, equals: .actionText)
                     .onAppear {
-                        if actionType.nameAsDefault {
-                            self.actionText = actionType.name   // Fill in text
+                        if actionType.prefillActionWithTypeString {
+                            self.actionText = actionType.typeString   // Fill in text
                         } else {
                             focusedField = .actionText  // Bring up keyboard ot ask for text
                         }
@@ -51,7 +51,7 @@ struct AddActionView: View {
                 }
                 Spacer()
             }.padding()
-            .navigationTitle(actionType.name)
+            .navigationTitle(actionType.typeString)
             .sheet(isPresented: $isShowingCalenderScreen) {
                 dismiss()
             } content: {

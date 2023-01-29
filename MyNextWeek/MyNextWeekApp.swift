@@ -11,7 +11,7 @@ import SwiftUI
 struct MyNextWeekApp: App {
     var body: some Scene {
         WindowGroup {
-            ActionTypesView()
+            ActionTypesView(viewModel: ActionTypesViewModel())
         }
     }
 }

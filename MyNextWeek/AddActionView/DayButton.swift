@@ -29,7 +29,7 @@ struct DayButton: View {
             onClick(dayIndexInWeek())
         })
         .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-        .background(Color(red: 0.1, green: 0.1, blue: 0.1))
+        .background(Color("backgroundSecondary"))
     }
 }
 
