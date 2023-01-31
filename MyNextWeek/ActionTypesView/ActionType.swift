@@ -8,12 +8,25 @@
 import Foundation
 
 struct ActionType: Identifiable, Hashable, Codable {
-    var id = UUID()
+    let id: UUID
     let typeString: String
     let prefillActionWithTypeString: Bool
-
-    init(name: String, prefill: Bool = true) {
+    let isAtARegularTime: Bool
+    let defaultTime: Date?
+    let duration: Int?
+    
+    init(id: UUID = UUID(),
+         name: String,
+         prefill: Bool = true,
+         isAtARegularTime: Bool = false,
+         defaultTime: Date? = nil,
+         duration: Int? = nil
+    ) {
+        self.id = id
         self.typeString = name
         self.prefillActionWithTypeString = prefill
+        self.isAtARegularTime = isAtARegularTime
+        self.defaultTime = defaultTime
+        self.duration = duration
     }
 }

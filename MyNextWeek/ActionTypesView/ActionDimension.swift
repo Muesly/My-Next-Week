@@ -9,19 +9,27 @@ import Foundation
 import SwiftUI
 
 class ActionDimension: Identifiable, Equatable {
-    let id = UUID()
+    let id: UUID
     let name: String
     let description: String
     let colour: Color
     var actionTypes: [ActionType]
     var defaultActionTypes: [ActionType]
+    let userDefaults: UserDefaultsType
 
-    init(name: String, description: String, colour: Color, defaultActionTypes: [ActionType]) {
+    init(id: UUID = UUID(),
+         name: String,
+         description: String,
+         colour: Color,
+         defaultActionTypes: [ActionType],
+         userDefaults: UserDefaultsType = UserDefaults.standard) {
+        self.id = id
         self.name = name
         self.description = description
         self.colour = colour
         self.actionTypes = []
         self.defaultActionTypes = defaultActionTypes
+        self.userDefaults = userDefaults
     }
 
     static func == (lhs: ActionDimension, rhs: ActionDimension) -> Bool {
@@ -33,7 +41,7 @@ class ActionDimension: Identifiable, Equatable {
     }
 
     func loadActions() {
-        if let actionTypesData = UserDefaults.standard.value(forKey: keyName) as? Data {
+        if let actionTypesData = userDefaults.value(forKey: keyName) as? Data {
             let decoder = JSONDecoder()
             actionTypes = (try? decoder.decode(Array.self, from: actionTypesData) as [ActionType]) ?? []
         } else {
@@ -45,7 +53,6 @@ class ActionDimension: Identifiable, Equatable {
         let encoder = JSONEncoder()
         if let encodedActionTypes = try? encoder.encode(actionTypes){
             UserDefaults.standard.set(encodedActionTypes, forKey: keyName)
-            print("Now there are \(actionTypes.count)")
         }
     }
 }

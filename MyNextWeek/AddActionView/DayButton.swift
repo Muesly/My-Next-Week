@@ -8,37 +8,44 @@
 import SwiftUI
 
 struct DayButton: View {
-    let day: Day
+    let date: Date
     let onClick: (Int) -> Void
+    let nf = NumberFormatter()
 
-    init(day: Day, onClick: @escaping (Int) -> Void) {
-        self.day = day
+    init(date: Date, onClick: @escaping (Int) -> Void) {
+        self.date = date
         self.onClick = onClick
+        nf.numberStyle = .ordinal
     }
 
-    func dayString() -> String {
-        day.rawValue.capitalized
+    var weekday: Int {
+        Calendar.current.component(.weekday, from: date) - 1
     }
 
-    func dayIndexInWeek() -> Int {
-        return Day.allCases.firstIndex(of: day) ?? 0
+    var day: Day {
+        Day.allCases[weekday]
     }
 
     var body: some View {
-        Button(dayString(), action: {
-            onClick(dayIndexInWeek())
+        let dateComponents = Calendar.current.component(.day, from: date)
+        let dayNumber = nf.string(from: dateComponents as NSNumber)!
+        let dateString = "\(day.rawValue.capitalized) \(dayNumber)"
+        Button(dateString, action: {
+            onClick(weekday)
         })
-        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        .frame(maxWidth: .infinity)
+        .padding(EdgeInsets(top: 8, leading: 7, bottom: 8, trailing: 7))
         .background(Color("backgroundSecondary"))
+        .cornerRadius(10)
     }
 }
 
 enum Day: String, CaseIterable {
+    case sun
     case mon
     case tue
     case wed
     case thu
     case fri
     case sat
-    case sun
 }

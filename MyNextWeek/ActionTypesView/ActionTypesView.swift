@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ActionTypesView: View {
     @ObservedObject private var viewModel: ActionTypesViewModel
-    @State var newActionTypeText: String = ""
-    @State var newActionTypePrefil: Bool = false
-    @State var newActionTypeTextSaved: Bool = false
+    @State var newActionTypeText = ""
+    @State var newActionTypePrefil = false
+    @State var newActionTypeTextSaved = false
     @State var newActionTypeDimension: ActionDimension?
+    @State var isAtARegularTime = false
+    @State var defaultTime = Date()
+    @State var duration: Int = 60
 
     init(viewModel: ActionTypesViewModel) {
         self.viewModel = viewModel
@@ -38,9 +41,12 @@ struct ActionTypesView: View {
                                           actionTypeDimension: $newActionTypeDimension,
                                           actionTypeText: $newActionTypeText,
                                           prefillActionWithTypeString: $newActionTypePrefil,
-                                          actionTypeTextSaved: $newActionTypeTextSaved)
+                                          actionTypeTextSaved: $newActionTypeTextSaved,
+                                          isAtARegularTime: $isAtARegularTime,
+                                          defaultTime: $defaultTime,
+                                          duration: $duration)
                     } label: {
-                        Text("Add new Action Type")
+                        Text("Add new \(actionDimension.name) action")
                             .foregroundColor(.gray)
                     }
                 }.listRowBackground(actionDimension.colour.opacity(0.3))
@@ -50,7 +56,12 @@ struct ActionTypesView: View {
         }
         .onChange(of: newActionTypeTextSaved) { saved in
             if saved {
-                viewModel.addNewActionType(dimension: newActionTypeDimension, name: newActionTypeText, prefil: newActionTypePrefil)
+                viewModel.addNewActionType(dimension: newActionTypeDimension,
+                                           name: newActionTypeText,
+                                           prefil: newActionTypePrefil,
+                                           isAtARegularTime: isAtARegularTime,
+                                           defaultTime: isAtARegularTime ? defaultTime : nil,
+                                           duration: isAtARegularTime ? duration : nil)
             }
         }
     }

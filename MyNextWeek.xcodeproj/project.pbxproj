@@ -11,6 +11,10 @@
 		EA7E735F298594D500C662F8 /* ActionTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E735E298594D500C662F8 /* ActionTypesView.swift */; };
 		EA7E7361298594D700C662F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7E7360298594D700C662F8 /* Assets.xcassets */; };
 		EA7E7364298594D700C662F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7E7363298594D700C662F8 /* Preview Assets.xcassets */; };
+		EAC427FD2989CB0D00F0B2F0 /* ActionTypesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC427FC2989CB0D00F0B2F0 /* ActionTypesViewModelTests.swift */; };
+		EAC428042989CFB900F0B2F0 /* UserDefaultsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */; };
+		EAC428062989D45600F0B2F0 /* AddActionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428052989D45600F0B2F0 /* AddActionViewModelTests.swift */; };
+		EAC428082989D53000F0B2F0 /* EventStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428072989D53000F0B2F0 /* EventStorable.swift */; };
 		EAEA227F2986956400561B57 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEA227E2986956400561B57 /* Colours.xcassets */; };
 		EAEA22812986D79C00561B57 /* ActionTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA22802986D79C00561B57 /* ActionTypesViewModel.swift */; };
 		EAEA22832986EBAA00561B57 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA22822986EBAA00561B57 /* ActionType.swift */; };
@@ -22,12 +26,27 @@
 		EAFA49EE2985E3F600115670 /* AddActionTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49ED2985E3F600115670 /* AddActionTypeView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EAC427FE2989CB0D00F0B2F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7E7351298594D500C662F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA7E7358298594D500C662F8;
+			remoteInfo = MyNextWeek;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		EA7E7359298594D500C662F8 /* MyNextWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNextWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7E735C298594D500C662F8 /* MyNextWeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextWeekApp.swift; sourceTree = "<group>"; };
 		EA7E735E298594D500C662F8 /* ActionTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypesView.swift; sourceTree = "<group>"; };
 		EA7E7360298594D700C662F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA7E7363298594D700C662F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EAC427FA2989CB0D00F0B2F0 /* MyNextWeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextWeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAC427FC2989CB0D00F0B2F0 /* ActionTypesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypesViewModelTests.swift; sourceTree = "<group>"; };
+		EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsType.swift; sourceTree = "<group>"; };
+		EAC428052989D45600F0B2F0 /* AddActionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewModelTests.swift; sourceTree = "<group>"; };
+		EAC428072989D53000F0B2F0 /* EventStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStorable.swift; sourceTree = "<group>"; };
 		EAEA227E2986956400561B57 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		EAEA22802986D79C00561B57 /* ActionTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypesViewModel.swift; sourceTree = "<group>"; };
 		EAEA22822986EBAA00561B57 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
@@ -47,6 +66,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAC427F72989CB0D00F0B2F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				EA7E735B298594D500C662F8 /* MyNextWeek */,
+				EAC427FB2989CB0D00F0B2F0 /* MyNextWeekTests */,
 				EA7E735A298594D500C662F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EA7E7359298594D500C662F8 /* MyNextWeek.app */,
+				EAC427FA2989CB0D00F0B2F0 /* MyNextWeekTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,10 +116,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EAC427FB2989CB0D00F0B2F0 /* MyNextWeekTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAC427FC2989CB0D00F0B2F0 /* ActionTypesViewModelTests.swift */,
+				EAC428052989D45600F0B2F0 /* AddActionViewModelTests.swift */,
+			);
+			path = MyNextWeekTests;
+			sourceTree = "<group>";
+		};
 		EAFA49EA2985E20D00115670 /* ActionTypesView */ = {
 			isa = PBXGroup;
 			children = (
 				EAFA49E229859F7200115670 /* ActionDimension.swift */,
+				EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */,
 				EAEA22822986EBAA00561B57 /* ActionType.swift */,
 				EA7E735E298594D500C662F8 /* ActionTypesView.swift */,
 				EAEA22802986D79C00561B57 /* ActionTypesViewModel.swift */,
@@ -104,6 +142,7 @@
 			children = (
 				EAFA49E029859C8500115670 /* AddActionView.swift */,
 				EAFA49E82985D3E300115670 /* AddActionViewModel.swift */,
+				EAC428072989D53000F0B2F0 /* EventStorable.swift */,
 				EAFA49E62985D08900115670 /* DayButton.swift */,
 				EAFA49E42985C71800115670 /* EventEditView.swift */,
 			);
@@ -138,6 +177,24 @@
 			productReference = EA7E7359298594D500C662F8 /* MyNextWeek.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EAC427F92989CB0D00F0B2F0 /* MyNextWeekTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAC428002989CB0D00F0B2F0 /* Build configuration list for PBXNativeTarget "MyNextWeekTests" */;
+			buildPhases = (
+				EAC427F62989CB0D00F0B2F0 /* Sources */,
+				EAC427F72989CB0D00F0B2F0 /* Frameworks */,
+				EAC427F82989CB0D00F0B2F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAC427FF2989CB0D00F0B2F0 /* PBXTargetDependency */,
+			);
+			name = MyNextWeekTests;
+			productName = MyNextWeekTests;
+			productReference = EAC427FA2989CB0D00F0B2F0 /* MyNextWeekTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +207,10 @@
 				TargetAttributes = {
 					EA7E7358298594D500C662F8 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					EAC427F92989CB0D00F0B2F0 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = EA7E7358298594D500C662F8;
 					};
 				};
 			};
@@ -167,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				EA7E7358298594D500C662F8 /* MyNextWeek */,
+				EAC427F92989CB0D00F0B2F0 /* MyNextWeekTests */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +244,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAC427F82989CB0D00F0B2F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -193,16 +262,35 @@
 				EAFA49E92985D3E300115670 /* AddActionViewModel.swift in Sources */,
 				EAFA49E129859C8500115670 /* AddActionView.swift in Sources */,
 				EA7E735F298594D500C662F8 /* ActionTypesView.swift in Sources */,
+				EAC428042989CFB900F0B2F0 /* UserDefaultsType.swift in Sources */,
 				EAFA49E52985C71800115670 /* EventEditView.swift in Sources */,
 				EAFA49E72985D08900115670 /* DayButton.swift in Sources */,
 				EAFA49EE2985E3F600115670 /* AddActionTypeView.swift in Sources */,
+				EAC428082989D53000F0B2F0 /* EventStorable.swift in Sources */,
 				EAEA22832986EBAA00561B57 /* ActionType.swift in Sources */,
 				EAEA22812986D79C00561B57 /* ActionTypesViewModel.swift in Sources */,
 				EA7E735D298594D500C662F8 /* MyNextWeekApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAC427F62989CB0D00F0B2F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC428062989D45600F0B2F0 /* AddActionViewModelTests.swift in Sources */,
+				EAC427FD2989CB0D00F0B2F0 /* ActionTypesViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAC427FF2989CB0D00F0B2F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA7E7358298594D500C662F8 /* MyNextWeek */;
+			targetProxy = EAC427FE2989CB0D00F0B2F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EA7E7365298594D700C662F8 /* Debug */ = {
@@ -331,6 +419,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need to access your contacts to list calendars to pick from.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -361,6 +450,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need to access your contacts to list calendars to pick from.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +466,50 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAC428012989CB0D00F0B2F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6BTW6RT2T4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyshort.mynextweek.MyNextWeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNextWeek.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyNextWeek";
+			};
+			name = Debug;
+		};
+		EAC428022989CB0D00F0B2F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6BTW6RT2T4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyshort.mynextweek.MyNextWeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNextWeek.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyNextWeek";
 			};
 			name = Release;
 		};
@@ -396,6 +530,15 @@
 			buildConfigurations = (
 				EA7E7368298594D700C662F8 /* Debug */,
 				EA7E7369298594D700C662F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAC428002989CB0D00F0B2F0 /* Build configuration list for PBXNativeTarget "MyNextWeekTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAC428012989CB0D00F0B2F0 /* Debug */,
+				EAC428022989CB0D00F0B2F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -17,6 +17,9 @@ struct AddActionTypeView: View {
     @Binding var actionTypeText: String
     @Binding var prefillActionWithTypeString: Bool
     @Binding var actionTypeTextSaved: Bool
+    @Binding var isAtARegularTime: Bool
+    @Binding var defaultTime: Date
+    @Binding var duration: Int
 
     @FocusState private var focusedField: FocusedField?
     @Environment(\.dismiss) private var dismiss
@@ -27,6 +30,7 @@ struct AddActionTypeView: View {
                 TextField("", text: $actionTypeText)
                     .padding()
                     .background(Color("backgroundSecondary"))
+                    .cornerRadius(10)
                     .focused($focusedField, equals: .actionTypeText)
                     .onAppear {
                         focusedField = .actionTypeText  // Bring up keyboard ot ask for text
@@ -42,6 +46,22 @@ struct AddActionTypeView: View {
                         }
                     }
                 Toggle("When adding new action, prefill with above string?", isOn: $prefillActionWithTypeString)
+                Toggle("Set a regular time?", isOn: $isAtARegularTime)
+                if isAtARegularTime {
+                    DatePicker("Default time for action", selection: $defaultTime, displayedComponents: .hourAndMinute)
+                    HStack {
+                        Text("Duration")
+                        Spacer()
+                        HStack {
+                            TextField("", value: $duration, formatter: NumberFormatter())
+                                .frame(width: 35, height: 35)
+                                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                                .background(Color("backgroundSecondary"))
+                                .cornerRadius(10)
+                            Text("mins")
+                        }
+                    }
+                }
                 Spacer()
             }
             .padding()
