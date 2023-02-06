@@ -14,45 +14,45 @@ final class MyNextWeekTests: XCTestCase {
     let uuid = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!
 
     func testAddNewActionType() throws {
-        let testDimension = ActionDimension(name: "Physical",
+        let testCategory = ActionCategory(name: "Physical",
                                   description: "Etc.",
                                   colour: Color("babyBlue"),
                                   defaultActionTypes: [],
                                   userDefaults: MockUserDefaults())
-        let subject = ActionTypesViewModel(dimensions: [testDimension])
-        XCTAssertEqual(testDimension.actionTypes, [])
+        let subject = ActionTypesViewModel(categories: [testCategory])
+        XCTAssertEqual(testCategory.actionTypes, [])
         subject.addNewActionType(id: uuid,
-                                 dimension: .physical,
+                                 category: .physical,
                                  name: "Go to gym",
                                  prefil: false,
                                  isAtARegularTime: false,
                                  defaultTime: nil,
                                  duration: nil)
-        XCTAssertEqual(testDimension.actionTypes, [ActionType(id: uuid,
+        XCTAssertEqual(testCategory.actionTypes, [ActionType(id: uuid,
                                                               name: "Go to gym",
                                                               prefill: false,
                                                               isAtARegularTime: false)])
     }
 
     func testRemoveActionType() {
-        let testDimension = ActionDimension(id: uuid,
+        let testCategory = ActionCategory(id: uuid,
                                             name: "Physical",
                                             description: "Etc.",
                                             colour: Color("babyBlue"),
                                             defaultActionTypes: [],
                                             userDefaults: MockUserDefaults())
-        let subject = ActionTypesViewModel(dimensions: [testDimension])
+        let subject = ActionTypesViewModel(categories: [testCategory])
         subject.addNewActionType(id: uuid,
-                                 dimension: .physical,
+                                 category: .physical,
                                  name: "Go to gym",
                                  prefil: false,
                                  isAtARegularTime: false,
                                  defaultTime: nil,
                                  duration: nil)
 
-        XCTAssertEqual(testDimension.actionTypes.count, 1)
-        subject.removeActionType(atOffsets: IndexSet(integer: 0), inDimension: testDimension)
-        XCTAssertEqual(testDimension.actionTypes.count, 0)
+        XCTAssertEqual(testCategory.actionTypes.count, 1)
+        subject.removeActionType(atOffsets: IndexSet(integer: 0), inCategory: testCategory)
+        XCTAssertEqual(testCategory.actionTypes.count, 0)
     }
 
     func testPerformanceExample() throws {

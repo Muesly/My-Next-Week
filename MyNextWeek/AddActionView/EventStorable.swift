@@ -11,7 +11,7 @@ import EventKit
 protocol EventStorable {
     func authorizationStatus() -> EKAuthorizationStatus
     func requestAccess(completion: @escaping (_ granted: Bool) -> Void)
-    func createEvent() -> EKEvent
+    func createEvent() -> EventType
 
     var calendars: [EKCalendar] { get }
 }
@@ -27,7 +27,7 @@ extension EKEventStore: EventStorable {
         }
     }
 
-    func createEvent() -> EKEvent {
+    func createEvent() -> EventType {
         EKEvent(eventStore: self)
     }
 

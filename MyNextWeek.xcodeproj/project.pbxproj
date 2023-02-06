@@ -15,11 +15,12 @@
 		EAC428042989CFB900F0B2F0 /* UserDefaultsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */; };
 		EAC428062989D45600F0B2F0 /* AddActionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428052989D45600F0B2F0 /* AddActionViewModelTests.swift */; };
 		EAC428082989D53000F0B2F0 /* EventStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC428072989D53000F0B2F0 /* EventStorable.swift */; };
+		EAE2796C298B233400D1930A /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2796B298B233400D1930A /* EventType.swift */; };
 		EAEA227F2986956400561B57 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEA227E2986956400561B57 /* Colours.xcassets */; };
 		EAEA22812986D79C00561B57 /* ActionTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA22802986D79C00561B57 /* ActionTypesViewModel.swift */; };
 		EAEA22832986EBAA00561B57 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA22822986EBAA00561B57 /* ActionType.swift */; };
 		EAFA49E129859C8500115670 /* AddActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E029859C8500115670 /* AddActionView.swift */; };
-		EAFA49E329859F7200115670 /* ActionDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E229859F7200115670 /* ActionDimension.swift */; };
+		EAFA49E329859F7200115670 /* ActionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E229859F7200115670 /* ActionCategory.swift */; };
 		EAFA49E52985C71800115670 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E42985C71800115670 /* EventEditView.swift */; };
 		EAFA49E72985D08900115670 /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E62985D08900115670 /* DayButton.swift */; };
 		EAFA49E92985D3E300115670 /* AddActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA49E82985D3E300115670 /* AddActionViewModel.swift */; };
@@ -47,11 +48,12 @@
 		EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsType.swift; sourceTree = "<group>"; };
 		EAC428052989D45600F0B2F0 /* AddActionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewModelTests.swift; sourceTree = "<group>"; };
 		EAC428072989D53000F0B2F0 /* EventStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStorable.swift; sourceTree = "<group>"; };
+		EAE2796B298B233400D1930A /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		EAEA227E2986956400561B57 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		EAEA22802986D79C00561B57 /* ActionTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypesViewModel.swift; sourceTree = "<group>"; };
 		EAEA22822986EBAA00561B57 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		EAFA49E029859C8500115670 /* AddActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionView.swift; sourceTree = "<group>"; };
-		EAFA49E229859F7200115670 /* ActionDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDimension.swift; sourceTree = "<group>"; };
+		EAFA49E229859F7200115670 /* ActionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCategory.swift; sourceTree = "<group>"; };
 		EAFA49E42985C71800115670 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
 		EAFA49E62985D08900115670 /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 		EAFA49E82985D3E300115670 /* AddActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewModel.swift; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		EAFA49EA2985E20D00115670 /* ActionTypesView */ = {
 			isa = PBXGroup;
 			children = (
-				EAFA49E229859F7200115670 /* ActionDimension.swift */,
+				EAFA49E229859F7200115670 /* ActionCategory.swift */,
 				EAC428032989CFB900F0B2F0 /* UserDefaultsType.swift */,
 				EAEA22822986EBAA00561B57 /* ActionType.swift */,
 				EA7E735E298594D500C662F8 /* ActionTypesView.swift */,
@@ -142,6 +144,7 @@
 			children = (
 				EAFA49E029859C8500115670 /* AddActionView.swift */,
 				EAFA49E82985D3E300115670 /* AddActionViewModel.swift */,
+				EAE2796B298B233400D1930A /* EventType.swift */,
 				EAC428072989D53000F0B2F0 /* EventStorable.swift */,
 				EAFA49E62985D08900115670 /* DayButton.swift */,
 				EAFA49E42985C71800115670 /* EventEditView.swift */,
@@ -258,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFA49E329859F7200115670 /* ActionDimension.swift in Sources */,
+				EAFA49E329859F7200115670 /* ActionCategory.swift in Sources */,
 				EAFA49E92985D3E300115670 /* AddActionViewModel.swift in Sources */,
 				EAFA49E129859C8500115670 /* AddActionView.swift in Sources */,
 				EA7E735F298594D500C662F8 /* ActionTypesView.swift in Sources */,
@@ -266,6 +269,7 @@
 				EAFA49E52985C71800115670 /* EventEditView.swift in Sources */,
 				EAFA49E72985D08900115670 /* DayButton.swift in Sources */,
 				EAFA49EE2985E3F600115670 /* AddActionTypeView.swift in Sources */,
+				EAE2796C298B233400D1930A /* EventType.swift in Sources */,
 				EAC428082989D53000F0B2F0 /* EventStorable.swift in Sources */,
 				EAEA22832986EBAA00561B57 /* ActionType.swift in Sources */,
 				EAEA22812986D79C00561B57 /* ActionTypesViewModel.swift in Sources */,
@@ -418,7 +422,7 @@
 				DEVELOPMENT_TEAM = 6BTW6RT2T4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions as events.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need to access your contacts to list calendars to pick from.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,7 +453,7 @@
 				DEVELOPMENT_TEAM = 6BTW6RT2T4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions selecting in the app.";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need to access your calendar to add actions as events.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need to access your contacts to list calendars to pick from.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

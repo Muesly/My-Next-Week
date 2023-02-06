@@ -8,41 +8,41 @@
 import SwiftUI
 
 class ActionTypesViewModel: ObservableObject {
-    @Published var dimensions: [ActionDimension]
+    @Published var categories: [ActionCategory]
 
-    init(dimensions: [ActionDimension] = [.physical, .planning, .social, .spiritual, .mental]) {
-        self.dimensions = dimensions
-        dimensions.forEach { $0.loadActions() }
+    init(categories: [ActionCategory] = [.physical, .planning, .social, .spiritual, .mental]) {
+        self.categories = categories
+        categories.forEach { $0.loadActions() }
     }
 
     func addNewActionType(id: UUID = UUID(),
-                          dimension: ActionDimension?,
+                          category: ActionCategory?,
                           name: String,
                           prefil: Bool,
                           isAtARegularTime: Bool,
                           defaultTime: Date?,
                           duration: Int?) {
-        guard let foundDimension = dimensions.first(where: { $0 == dimension }) else {
+        guard let foundCategory = categories.first(where: { $0 == category }) else {
             return
         }
-        foundDimension.actionTypes.append(ActionType(id: id,
-                                                     name: name,
-                                                     prefill: prefil,
-                                                     isAtARegularTime: isAtARegularTime,
-                                                     defaultTime: defaultTime,
-                                                     duration: duration))
-        foundDimension.saveActions()
+        foundCategory.actionTypes.append(ActionType(id: id,
+                                                    name: name,
+                                                    prefill: prefil,
+                                                    isAtARegularTime: isAtARegularTime,
+                                                    defaultTime: defaultTime,
+                                                    duration: duration))
+        foundCategory.saveActions()
         self.objectWillChange.send()
     }
 
-    func removeActionType(atOffsets offsets: IndexSet, inDimension dimension: ActionDimension) {
-        guard let foundDimension = dimensions.first(where: { $0 == dimension }),
+    func removeActionType(atOffsets offsets: IndexSet, inCategory category: ActionCategory) {
+        guard let foundCategory = categories.first(where: { $0 == category }),
               offsets.count == 1,
               let offsetToDelete = offsets.first else {
             return
         }
-        foundDimension.actionTypes.remove(at: offsetToDelete)
-        foundDimension.saveActions()
+        foundCategory.actionTypes.remove(at: offsetToDelete)
+        foundCategory.saveActions()
         self.objectWillChange.send()
     }
 }

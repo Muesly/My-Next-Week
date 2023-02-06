@@ -12,8 +12,8 @@ struct AddActionTypeView: View {
         case actionTypeText
     }
 
-    let chosenDimension: ActionDimension
-    @Binding var actionTypeDimension: ActionDimension?
+    let chosenCategory: ActionCategory
+    @Binding var actionTypeCategory: ActionCategory?
     @Binding var actionTypeText: String
     @Binding var prefillActionWithTypeString: Bool
     @Binding var actionTypeTextSaved: Bool
@@ -34,7 +34,7 @@ struct AddActionTypeView: View {
                     .focused($focusedField, equals: .actionTypeText)
                     .onAppear {
                         focusedField = .actionTypeText  // Bring up keyboard ot ask for text
-                        actionTypeDimension = chosenDimension
+                        actionTypeCategory = chosenCategory
                         actionTypeText = ""
                         actionTypeTextSaved = false
                         prefillActionWithTypeString = true
@@ -66,7 +66,7 @@ struct AddActionTypeView: View {
             }
             .padding()
             .foregroundColor(Color("foregroundPrimary"))
-            .navigationTitle(chosenDimension.name)
+            .navigationTitle(chosenCategory.name)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {

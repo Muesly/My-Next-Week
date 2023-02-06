@@ -13,7 +13,7 @@ struct AddActionView: View {
     }
 
     private let actionType: ActionType
-    private let viewModel: AddActionViewModel
+    @StateObject private var viewModel: AddActionViewModel = AddActionViewModel()
     @State var actionText: String = ""
 
     @State var isShowingCalenderScreen = false
@@ -23,9 +23,8 @@ struct AddActionView: View {
     @FocusState private var focusedField: FocusedField?
     @State private var chosenCalendarName: String = ""
 
-    init(actionType: ActionType, viewModel: AddActionViewModel) {
+    init(actionType: ActionType) {
         self.actionType = actionType
-        self.viewModel = viewModel
     }
 
     var body: some View {
@@ -90,6 +89,9 @@ struct AddActionView: View {
             }
             .alert(isPresented: $shouldShowConfirmationAlert, content: {
                 Alert(title: Text("Added to your calendar!"))
+            })
+            .alert(isPresented: $viewModel.shouldShowCalendarPermissionAlert, content: {
+                Alert(title: Text("No access to your calendar"))
             })
         }
     }

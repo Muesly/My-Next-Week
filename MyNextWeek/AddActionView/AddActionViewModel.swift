@@ -8,7 +8,10 @@
 import EventKit
 import SwiftUI
 
-class AddActionViewModel {
+class AddActionViewModel: ObservableObject {
+    @Published var shouldShowCalendarPermissionAlert = false
+    @Published var shouldShowConfirmationAlert = false
+
     let eventStore: EventStorable
     var actionDayIndex: Int = 0
 
@@ -20,6 +23,7 @@ class AddActionViewModel {
         checkCalendarAuthorizationStatus { [weak self] authorized in
             self?.actionDayIndex = index
             guard authorized else {
+                self?.shouldShowCalendarPermissionAlert = true
                 completion(false)
                 return
             }
@@ -31,11 +35,9 @@ class AddActionViewModel {
         switch (eventStore.authorizationStatus()) {
         case .notDetermined:
             eventStore.requestAccess { (accessGranted: Bool) in
-                if accessGranted == true {
-                    DispatchQueue.main.async(execute: {
-                        completion(true)
-                    })
-                }
+                DispatchQueue.main.async(execute: {
+                    completion(accessGranted)
+                })
             }
         case .authorized:
             DispatchQueue.main.async(execute: {
@@ -46,13 +48,17 @@ class AddActionViewModel {
         }
     }
 
-    private func actionDate(for actionDayIndex: Int) -> Date {
+    private func actionDate(for actionDayIndex: Int, from currentDate: Date) -> Date {
         let gregorian = Calendar(identifier: .gregorian)
-        let currentDate = Date()
         let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: currentDate))!
 
         let diff = Calendar.current.dateComponents([.day], from: sunday, to: currentDate)
-        let offset = (diff.day == 0) ? 1 : 8    // If we're on Sunday then just go up one to Monday (tomorrow).  Otherwise this will be in the following week.
+        var offset: Int = 0
+        if diff.day! <= 4 {
+            offset = 1  // Sunday or Monday, then just move to Monday
+        } else {
+            offset = 8  // Move to following Monday
+        }
         let startOfWeek = gregorian.date(byAdding: .day, value: offset, to: sunday)
 
         return Calendar.current.date(byAdding: .day, value: actionDayIndex, to: startOfWeek!)!
@@ -60,28 +66,29 @@ class AddActionViewModel {
 
     func createEvent(actionType: ActionType,
                      actionText: String,
-                     calendarName: String) -> EKEvent {
-        let newEvent = eventStore.createEvent()
+                     calendarName: String,
+                     currentDate: Date = Date()) -> EventType {
+        var newEvent = eventStore.createEvent()
         let calendars = eventStore.calendars
         let chosenCalendar = calendars.first { $0.title == calendarName}
-        newEvent.calendar = chosenCalendar
-        newEvent.title = actionText
+        newEvent.calendarChoice = chosenCalendar
+        newEvent.titleStr = actionText
         if actionType.isAtARegularTime,
            let defaultTime = actionType.defaultTime {
-            newEvent.isAllDay = false
+            newEvent.allDayIndicator = false
 
-            var date = actionDate(for: actionDayIndex)
+            var date = actionDate(for: actionDayIndex, from: currentDate)
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: defaultTime)
             let minutes = calendar.component(.minute, from: defaultTime)
             date.addTimeInterval(TimeInterval((hour * 3600) + (minutes * 60)))
-            newEvent.startDate = date
-            newEvent.endDate = date + TimeInterval((actionType.duration ?? 60) * 60)
+            newEvent.eventStartDate = date
+            newEvent.eventEndDate = date + TimeInterval((actionType.duration ?? 60) * 60)
         } else {
-            newEvent.isAllDay = true
-            let date = actionDate(for: actionDayIndex)
-            newEvent.startDate = date
-            newEvent.endDate = date
+            newEvent.allDayIndicator = true
+            let date = actionDate(for: actionDayIndex, from: currentDate)
+            newEvent.eventStartDate = date
+            newEvent.eventEndDate = date
         }
         return newEvent
     }

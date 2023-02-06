@@ -16,12 +16,12 @@ struct EventEditView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
 
     let eventStore: EventStorable
-    let event: EKEvent?
+    let event: EventType?
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<EventEditView>) -> EKEventEditViewController {
         let eventEditViewController = EKEventEditViewController()
         eventEditViewController.eventStore = eventStore as? EKEventStore
-        if let event = event {
+        if let event = event as? EKEvent {
             eventEditViewController.event = event // when set to nil the controller would not display anything
         }
         eventEditViewController.editViewDelegate = context.coordinator

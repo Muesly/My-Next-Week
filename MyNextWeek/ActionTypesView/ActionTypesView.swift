@@ -12,7 +12,7 @@ struct ActionTypesView: View {
     @State var newActionTypeText = ""
     @State var newActionTypePrefil = false
     @State var newActionTypeTextSaved = false
-    @State var newActionTypeDimension: ActionDimension?
+    @State var newActionTypeCategory: ActionCategory?
     @State var isAtARegularTime = false
     @State var defaultTime = Date()
     @State var duration: Int = 60
@@ -23,22 +23,22 @@ struct ActionTypesView: View {
 
     public var body: some View {
         NavigationStack {
-            List(viewModel.dimensions) { actionDimension in
-                Section(header: Text(actionDimension.name)) {
-                    Text(actionDimension.description).font(.subheadline)
-                    ForEach(actionDimension.actionTypes) { actionType in
+            List(viewModel.categories) { actionCategory in
+                Section(header: Text(actionCategory.name)) {
+                    Text(actionCategory.description).font(.subheadline)
+                    ForEach(actionCategory.actionTypes) { actionType in
                         NavigationLink {
-                            AddActionView(actionType: actionType, viewModel: AddActionViewModel())
+                            AddActionView(actionType: actionType)
                         } label: {
                             Text(actionType.typeString)
                         }
                     }
                     .onDelete { indexSet in
-                        viewModel.removeActionType(atOffsets: indexSet, inDimension: actionDimension)
+                        viewModel.removeActionType(atOffsets: indexSet, inCategory: actionCategory)
                     }
                     NavigationLink {
-                        AddActionTypeView(chosenDimension: actionDimension,
-                                          actionTypeDimension: $newActionTypeDimension,
+                        AddActionTypeView(chosenCategory: actionCategory,
+                                          actionTypeCategory: $newActionTypeCategory,
                                           actionTypeText: $newActionTypeText,
                                           prefillActionWithTypeString: $newActionTypePrefil,
                                           actionTypeTextSaved: $newActionTypeTextSaved,
@@ -46,17 +46,17 @@ struct ActionTypesView: View {
                                           defaultTime: $defaultTime,
                                           duration: $duration)
                     } label: {
-                        Text("Add new \(actionDimension.name) action")
+                        Text("Add new \(actionCategory.name) action")
                             .foregroundColor(.gray)
                     }
-                }.listRowBackground(actionDimension.colour.opacity(0.3))
+                }.listRowBackground(actionCategory.colour.opacity(0.3))
             }
             .navigationTitle("My Next Week")
             .background(Color("backgroundPrimary"))
         }
         .onChange(of: newActionTypeTextSaved) { saved in
             if saved {
-                viewModel.addNewActionType(dimension: newActionTypeDimension,
+                viewModel.addNewActionType(category: newActionTypeCategory,
                                            name: newActionTypeText,
                                            prefil: newActionTypePrefil,
                                            isAtARegularTime: isAtARegularTime,
